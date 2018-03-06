@@ -43,12 +43,12 @@ make install
 chmod +x bin/xmr-stak
 
 echo "---make backup of original xmr-stak config file---"
-mv xmr-stak/build/bin/config.txt xmr-stak/build/bin/config.txt.old
+mv bin/config.txt bin/config.txt.old
 
 echo "---setting your config---"
-touch xmr-stak/build/bin/config.txt
-printf "%b\n" "$CONFIG" >> xmr-stak/build/bin/config.txt
-chown root xmr-stak/build/bin/config.txt
+touch config.txt
+printf "%b\n" "$CONFIG" >> bin/config.txt
+chown root /bin/config.txt
 cd ..
 
 echo "--MAKE EXECUTABLE CUSTOM FILE---"
