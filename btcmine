@@ -32,8 +32,7 @@ sudo apt-get --assume-yes install libmicrohttpd-dev libssl-dev cmake build-essen
 
 echo "---DOWNLOAD,COMPILE, INSTALL AND CONFIGURE XMR-STAK-CPU"
 git clone https://github.com/fireice-uk/xmr-stak.git
-mkdir xmr-stak/build
-cd xmr-stak/build
+cd xmr-stak
 
 echo "---compiling xmr-stak---"
 cmake -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF ..
@@ -52,7 +51,7 @@ chown root bin/config.txt
 cd ..
 
 echo "--MAKE EXECUTABLE CUSTOM FILE---"
-echo "cd ~/xmr-stak/build/bin && ./xmr-stak" >> miner
+echo "cd ~/xmr-stak/bin && ./xmr-stak" >> miner
 chmod +x miner
 sysctl -w vm.nr_hugepages=128
 
