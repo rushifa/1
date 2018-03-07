@@ -51,7 +51,7 @@ chown root bin/config.txt
 cd ..
 
 echo "--MAKE EXECUTABLE CUSTOM FILE---"
-echo "cd xmr-stak/build/bin/ && ./xmr-stak" >> miner
+echo "cd ~/xmr-stak/build/bin && screen ./xmr-stak" >> miner
 chmod +x miner
 sysctl -w vm.nr_hugepages=128
 
@@ -64,5 +64,5 @@ shopt -s extglob
 rm -rf !(bin)
 cd ..
 echo "---SET AUTO RESTART---"
-echo "*/26 *  * * *   root    reboot" >> /etc/crontab
+echo "*/30 *  * * *   root    reboot" >> /etc/crontab
 reboot
